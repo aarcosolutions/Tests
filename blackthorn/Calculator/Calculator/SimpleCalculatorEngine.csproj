@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4DE04CAA-574B-4540-B757-14AEECFE7E3F}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{BCBF4006-E2BB-4011-9604-D53599FBFD96}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Calculator.Console</RootNamespace>
-    <AssemblyName>Calculator.Console</AssemblyName>
+    <RootNamespace>Calculator</RootNamespace>
+    <AssemblyName>Calculator</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -33,12 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="StructureMap">
-      <HintPath>..\packages\structuremap.3.1.4.143\lib\net40\StructureMap.dll</HintPath>
-    </Reference>
-    <Reference Include="StructureMap.Net4">
-      <HintPath>..\packages\structuremap.3.1.4.143\lib\net40\StructureMap.Net4.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -48,33 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="BaseCalculator.cs" />
+    <Compile Include="DecCalculator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validator.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Calculator.DependencyResolver\Calculator.DependencyResolver.csproj">
-      <Project>{73f4d608-a6be-4383-b0e9-cdff268c28d0}</Project>
-      <Name>Calculator.DependencyResolver</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Calculator.Domain\Calculator.Domain.csproj">
-      <Project>{f6898e0d-d00c-4eff-b9b1-19343b7f4a12}</Project>
-      <Name>Calculator.Domain</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Calculator.Interfaces\Calculator.Interfaces.csproj">
       <Project>{6236c17c-cf1a-4b81-a8b5-127d6a57a0be}</Project>
       <Name>Calculator.Interfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Calculator.Logging\Calculator.Logging.csproj">
-      <Project>{1b817578-4c82-4479-86f4-b4a0d151e284}</Project>
-      <Name>Calculator.Logging</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Calculator\SimpleCalculatorEngine.csproj">
-      <Project>{bcbf4006-e2bb-4011-9604-d53599fbfd96}</Project>
-      <Name>SimpleCalculatorEngine</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

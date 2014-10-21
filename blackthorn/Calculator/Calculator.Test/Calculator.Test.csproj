@@ -45,6 +45,12 @@
     <Reference Include="Moq">
       <HintPath>..\packages\Moq.4.2.1409.1722\lib\net40\Moq.dll</HintPath>
     </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\packages\structuremap.3.1.4.143\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap.Net4">
+      <HintPath>..\packages\structuremap.3.1.4.143\lib\net40\StructureMap.Net4.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
@@ -63,13 +69,22 @@
   </Choose>
   <ItemGroup>
     <Compile Include="DecCalculatorTest.cs" />
-    <Compile Include="RegExHelperTests.cs" />
+    <Compile Include="DependencyResolverTest.cs" />
+    <Compile Include="ValidatorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Calculator.Console\Calculator.Console.csproj">
+      <Project>{4de04caa-574b-4540-b757-14aeecfe7e3f}</Project>
+      <Name>Calculator.Console</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Calculator.DependencyResolver\Calculator.DependencyResolver.csproj">
+      <Project>{73f4d608-a6be-4383-b0e9-cdff268c28d0}</Project>
+      <Name>Calculator.DependencyResolver</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Calculator.Domain\Calculator.Domain.csproj">
       <Project>{f6898e0d-d00c-4eff-b9b1-19343b7f4a12}</Project>
       <Name>Calculator.Domain</Name>
@@ -82,9 +97,9 @@
       <Project>{1b817578-4c82-4479-86f4-b4a0d151e284}</Project>
       <Name>Calculator.Logging</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Calculator\Calculator.csproj">
+    <ProjectReference Include="..\Calculator\SimpleCalculatorEngine.csproj">
       <Project>{bcbf4006-e2bb-4011-9604-d53599fbfd96}</Project>
-      <Name>Calculator</Name>
+      <Name>SimpleCalculatorEngine</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

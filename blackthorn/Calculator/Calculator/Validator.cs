@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using Calculator.Interfaces;
 
 namespace Calculator
 {
-    public static class RegExHelper
+    public static class Validator
     {
         public const string SignedIntegerPattern = @"^-?[0-9]+$";
-        public static bool ValidateAndParseNumbers<T>(string input, string pattern, out T output) where T : struct
+        public static bool ValidateAndParseNumbers<T>(string input, string pattern, out T output)
         {
             var result = false;
             output = default(T);
@@ -27,7 +28,7 @@ namespace Calculator
 
         public static bool ValidateOperator(string input)
         {
-            var operators = new List<string> { "+", "-", "/", "%", "*" };
+            var operators = new List<string> { "+", "-" }; 
 
             return operators.Contains(input.Trim());
         }

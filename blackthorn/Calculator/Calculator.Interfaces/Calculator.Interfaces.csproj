@@ -40,9 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Enums.cs" />
+    <Compile Include="CommonEnums.cs" />
     <Compile Include="ICalculator.cs" />
-    <Compile Include="IInputValidator.cs" />
     <Compile Include="ILogger.cs" />
     <Compile Include="IInput.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

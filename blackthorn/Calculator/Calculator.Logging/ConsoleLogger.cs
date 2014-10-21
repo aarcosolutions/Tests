@@ -11,7 +11,7 @@ namespace Calculator.Logging
     {
         public void Log(string message)
         {
-            //Write to log;
+            Console.WriteLine(message);
         }
     }
 }

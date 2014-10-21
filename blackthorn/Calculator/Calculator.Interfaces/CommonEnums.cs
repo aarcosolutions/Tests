@@ -8,9 +8,9 @@ namespace Calculator.Interfaces
 {
     public enum CalculatorMode
     {
-        Dec,
-        Hex,
+        Decimal,
+        HexaDecimal,
         Oct,
-        Bin
+        Binary
     }
 }
